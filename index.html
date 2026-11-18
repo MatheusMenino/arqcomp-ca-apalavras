@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caça-Palavras · Teia de Bits</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="top">
+    <h1>Caça-Palavras <span>Teia de Bits</span></h1>
+    <p>Leia as pistas, descubra o termo e marque-o no tabuleiro: arraste do início ao fim da palavra.</p>
+  </header>
+
+  <main class="layout">
+
+    <section class="board-wrap">
+      <div class="stats">
+        <div class="stat"><span class="label">Encontradas</span><strong id="stat-found">0/16</strong></div>
+        <div class="stat"><span class="label">Tempo</span><strong id="stat-time">00:00</strong></div>
+        <div class="stat"><span class="label">Dicas usadas</span><strong id="stat-hints">0</strong></div>
+      </div>
+
+      <div id="grid" class="grid" aria-label="Tabuleiro do caça-palavras"></div>
+
+      <div class="toolbar">
+        <button id="btn-hint" class="btn">💡 Dica de letra</button>
+        <button id="btn-reveal" class="btn ghost">Mostrar respostas</button>
+        <button id="btn-new" class="btn primary">Novo jogo</button>
+        <label class="easy">
+          <input type="checkbox" id="chk-easy"> Modo fácil <small>(só → ↓ ↘)</small>
+        </label>
+      </div>
+    </section>
+
+    <aside class="clues">
+      <h2>Pistas</h2>
+      <p class="note">Os termos no tabuleiro não têm espaços nem acentos.</p>
+      <ol id="clues"></ol>
+    </aside>
+
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <h2>🎉 Parabéns!</h2>
+      <p id="modal-text"></p>
+      <button id="btn-again" class="btn primary">Jogar de novo</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
